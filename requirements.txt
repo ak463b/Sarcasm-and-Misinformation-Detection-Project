@@ -7,3 +7,5 @@ joblib
 imblearn
 praw
 matplotlib
+bcrypt
+sqlite3
