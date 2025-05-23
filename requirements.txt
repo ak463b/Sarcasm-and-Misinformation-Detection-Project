@@ -11,3 +11,6 @@ bcrypt
 sqlite3
 json
 pickle
+TfidfVectorizer
+RandomizedSearchCV
+SMOTE
