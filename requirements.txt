@@ -9,3 +9,4 @@ praw
 matplotlib
 bcrypt
 sqlite3
+json
