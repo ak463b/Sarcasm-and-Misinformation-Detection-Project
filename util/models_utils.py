@@ -22,3 +22,15 @@ def predict_text(text, mis_model, mis_vectorizer, sar_model, sar_vectorizer):
     mis_pred = mis_model.predict(mis_vec)[0]
     sar_pred = sar_model.predict(sar_vec)[0]
     return mis_pred, sar_pred
+
+def predict_file(file_path, mis_model, mis_vectorizer, sar_model, sar_vectorizer):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            file_content = f.read()
+        return predict_text(file_content, mis_model, mis_vectorizer, sar_model, sar_vectorizer)
+    except FileNotFoundError:
+        print(f"Error: File not found at {file_path}")
+        return None, None
+    except Exception as e:
+        print(f"An error occurred while reading or processing the file: {e}")
+        return None, None 
